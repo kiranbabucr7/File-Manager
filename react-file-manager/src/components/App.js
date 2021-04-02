@@ -1,5 +1,6 @@
 import { Container } from 'react-bootstrap';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import  PrivateRoute  from "./PrivateRoute"
 import { AuthProvider } from '../contexts/AuthContext';
 import Dashboard from './Dashboard';
 import Login from './Login';
@@ -13,9 +14,9 @@ function App() {
         <Router>
           <AuthProvider>
             <Switch>
-              <Route exact path="/" component={Dashboard}/>
               <Route path="/signup" component={Signup}/>
               <Route path="/login" component={Login}/>
+              <PrivateRoute exact path="/" component={Dashboard}/>
             </Switch>
           </AuthProvider>
         </Router>
