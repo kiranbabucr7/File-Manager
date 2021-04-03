@@ -10,6 +10,7 @@ export default function Signup() {
   const passwordConfirmationRef = useRef()
   const { signup } = useAuth()
   const [error, setError] = useState()
+  const [message, setMessage] = useState()
   const [loading, setLoading] = useState(false)
 
   async function handleSubmit (e) {
@@ -18,9 +19,11 @@ export default function Signup() {
       return setError("Passwords do not match")
     }
     try{  
+      setMessage('')
       setError('')
       setLoading(true)
       await signup( emailRef.current.value, passwordRef.current.value)
+      setMessage('Sign up Sucessfully')
     }catch (err){
       setError(err.message)
     }
@@ -33,6 +36,7 @@ export default function Signup() {
         <Card.Body>
           <h2 className="text-center mb-4">Sign Up</h2>
           {error&& <Alert variant="danger">{error}</Alert>}
+          {message&& <Alert variant="success">{message}</Alert>}
           <Form onSubmit={handleSubmit}>
             <Form.Group id="email">
               <Form.Label>Email</Form.Label>
