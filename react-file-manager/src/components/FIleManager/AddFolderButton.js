@@ -4,6 +4,7 @@ import React, { useState } from 'react'
 import { Button, Form, Modal } from "react-bootstrap"
 import { database } from "../../firebase"
 import { useAuth } from "../../contexts/AuthContext"
+import { ROOT_FOLDER } from "../../hooks/useFolder"
 
 export default function AddFolderButton( {currentFolder} ) {
   const [ open, setOpen ] = useState(false)
@@ -20,6 +21,13 @@ export default function AddFolderButton( {currentFolder} ) {
 
   function handleSubmit(e){
     e.preventDefault()
+    const path = [...currentFolder.path]
+
+    if( currentFolder !== ROOT_FOLDER ) {
+      path.push({name:currentFolder.name, id:currentFolder.id})
+    }
+
+
 
     if(currentFolder == null) return
 
@@ -27,6 +35,7 @@ export default function AddFolderButton( {currentFolder} ) {
       name,
       userId: currentUser.uid,
       parentId: currentFolder.id,
+      path:path,
       createdAt: database.getCurrentTimestamp(),
     })
     setName('')
