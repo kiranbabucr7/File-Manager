@@ -1,5 +1,6 @@
 import firebase from 'firebase/app'
 import 'firebase/auth'
+import "firebase/firestore"
 
 const app = firebase.initializeApp({
   apiKey: "AIzaSyC1HXZa1cqbB0RpnvBad2jO-kXeKhOxNJQ",
@@ -10,5 +11,12 @@ const app = firebase.initializeApp({
   appId: "1:515743121427:web:a9976d0370d63e66063fe6",
 })
 
+const firestore = app.firestore()
+
+export const database = {
+  folders: firestore.collection('folders'),
+  files: firestore.collection('files'),
+  getCurrentTimestamp: firebase.firestore.FieldValue.serverTimestamp,
+}
 export const auth = app.auth()
 export default app
