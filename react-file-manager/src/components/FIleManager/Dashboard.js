@@ -5,7 +5,7 @@ import AddFolderButton from './AddFolderButton'
 import { useFolder } from "../../hooks/useFolder"
 export default function Dashboard() {
 
-  const { folder } = useFolder()
+  const { folder } = useFolder("ZR5xW4pyJOj1rTvYXxbJ")
   console.log(folder)
 
   return (

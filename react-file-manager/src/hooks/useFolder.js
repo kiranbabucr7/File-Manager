@@ -1,4 +1,5 @@
 import { useEffect, useReducer } from 'react'
+import { database } from "../firebase"
 
 const ACTIONS = {
   ADD: 'add-folder',
@@ -51,6 +52,22 @@ export function useFolder(folderId = null, folder = null) {
         payload:{ folder: ROOT_FOLDER}
       })
     }
+
+    database.folders
+    .doc(folderId)
+    .get()
+    .then( doc => {
+      dispatch({ 
+        type:ACTIONS.UPDATE_FOLDER, 
+        payload:{ folder: database.formatDoc(doc)}
+      })
+    }).catch(() => {
+      return dispatch({ 
+        type:ACTIONS.UPDATE_FOLDER, 
+        payload:{ folder: ROOT_FOLDER}
+      })
+    })
+
   },[folderId])
 
   return state
