@@ -14,6 +14,7 @@ function App() {
           <Switch>
             {/* FILE MANAGER */}
             <PrivateRoute exact path="/" component={Dashboard}/>
+            <PrivateRoute exact path="/Folder/:folderId" component={Dashboard}/>
             {/* AUTH */}
             <Route path="/signup" component={Signup}/>
             <Route path="/login" component={Login}/>
