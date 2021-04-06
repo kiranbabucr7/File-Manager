@@ -17,7 +17,7 @@ export default function NavbarComponent() {
   }
 
   return (
-    <Navbar bg="d-flex justify-content-between light">
+    <Navbar bg="light" className="d-flex justify-content-between">
       <Navbar.Brand as={Link} to="/">
         Mad Street Den
       </Navbar.Brand>
