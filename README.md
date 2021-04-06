@@ -1,2 +1,2 @@
 # File-Manager
-A simple file manager using React and Redux
+A simple file manager using React
