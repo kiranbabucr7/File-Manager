@@ -2,6 +2,7 @@ import React from 'react'
 import Navbar from "./Navbar"
 import { Container } from "react-bootstrap"
 import AddFolderButton from './AddFolderButton'
+import AddFileButton from './AddFileButton'
 import { useFolder } from "../../hooks/useFolder"
 import Folder from "../FIleManager/Folder" 
 import { useParams, useLocation } from "react-router-dom"
@@ -19,6 +20,7 @@ export default function Dashboard() {
       <Container>
         <div className="d-flex align-items-center" >
           <FolderBreadcrumb currentFolder={folder}/>
+          <AddFileButton currentFolder={folder}/>
           <AddFolderButton currentFolder={folder}/>
         </div>
         {childFolders.length > 0 && (
