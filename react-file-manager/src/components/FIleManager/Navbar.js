@@ -1,7 +1,7 @@
 import React from 'react'
 import { Nav, Navbar } from "react-bootstrap"
-import { useAuth } from "../../contexts/AuthContext"
 import { Link, useHistory } from "react-router-dom"
+import { useAuth } from "../../contexts/AuthContext"
 
 export default function NavbarComponent() {
 
@@ -19,7 +19,7 @@ export default function NavbarComponent() {
   return (
     <Navbar bg="light" className="d-flex justify-content-between">
       <Navbar.Brand as={Link} to="/">
-        Mad Street Den
+        My File Manager
       </Navbar.Brand>
       <div className="d-flex">
         <Nav.Link as={Link} to="/user">
