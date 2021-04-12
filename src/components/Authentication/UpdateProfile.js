@@ -2,9 +2,10 @@ import React, { useRef, useState } from 'react'
 import { Alert, Button, Card, Form } from 'react-bootstrap'
 import { Link, useHistory } from 'react-router-dom'
 import { useAuth } from '../../contexts/AuthContext'
+import NavbarComponent from '../FIleManager/Navbar'
 import CenteredContainer from "./CenteredContainer"
 
-export default function Signup() {
+export default function UpdateProfile() {
 
   const emailRef = useRef()
   const passwordRef = useRef()
@@ -37,6 +38,8 @@ export default function Signup() {
   }
 
   return (
+    <>
+    <NavbarComponent />
     <CenteredContainer>
       <Card>
         <Card.Body>
@@ -69,5 +72,6 @@ export default function Signup() {
         <Link to="/user">Cancel</Link>
       </div>
     </CenteredContainer>
+    </>
   )
 }
