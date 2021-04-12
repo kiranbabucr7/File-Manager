@@ -1,12 +1,12 @@
-import React, { useState } from "react"
-import ReactDOM from "react-dom"
 import { faFileUpload } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { useAuth } from "../../contexts/AuthContext"
-import { storage, database } from "../../firebase"
-import { ROOT_FOLDER } from "../../hooks/useFolder"
-import { v4 as uuidV4 } from "uuid"
+import React, { useState } from "react"
 import { ProgressBar, Toast } from "react-bootstrap"
+import ReactDOM from "react-dom"
+import { v4 as uuidV4 } from "uuid"
+import { useAuth } from "../../contexts/AuthContext"
+import { database, storage } from "../../firebase"
+import { ROOT_FOLDER } from "../../hooks/useFolder"
 
 export default function AddFileButton({ currentFolder }) {
   const [uploadingFiles, setUploadingFiles] = useState([])

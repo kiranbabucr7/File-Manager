@@ -1,7 +1,7 @@
 import React, { useRef, useState } from 'react'
 import { Alert, Button, Card, Form } from 'react-bootstrap'
-import { useAuth } from '../../contexts/AuthContext'
 import { Link } from 'react-router-dom'
+import { useAuth } from '../../contexts/AuthContext'
 import CenteredContainer from "./CenteredContainer"
 
 export default function Signup() {

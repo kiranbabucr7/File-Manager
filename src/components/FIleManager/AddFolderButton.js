@@ -2,8 +2,8 @@ import { faFolderPlus } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import React, { useState } from 'react'
 import { Button, Form, Modal } from "react-bootstrap"
-import { database } from "../../firebase"
 import { useAuth } from "../../contexts/AuthContext"
+import { database } from "../../firebase"
 import { ROOT_FOLDER } from "../../hooks/useFolder"
 
 export default function AddFolderButton( {currentFolder} ) {
@@ -39,7 +39,7 @@ export default function AddFolderButton( {currentFolder} ) {
       createdAt: database.getCurrentTimestamp(),
     })
     setName('')
-    closeModal()
+    closeModal()``
   }
 
   return (

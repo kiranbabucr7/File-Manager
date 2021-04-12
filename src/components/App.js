@@ -6,7 +6,7 @@ import PrivateRoute from "./Authentication/PrivateRoute";
 import Profile from './Authentication/Profile';
 import Signup from "./Authentication/Signup";
 import UpdateProfile from "./Authentication/UpdateProfile";
-import Dashboard from "./FIleManager/Dashboard"
+import Dashboard from "./FIleManager/Dashboard";
 function App() {
   return (
       <Router>
